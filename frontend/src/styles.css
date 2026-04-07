@@ -1,0 +1,174 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f1ea;
+  color: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.8), transparent 45%),
+    linear-gradient(180deg, #faf7f2 0%, #f1ece3 100%);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: min(100%, 640px);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(31, 41, 55, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(31, 41, 55, 0.08);
+  padding: 28px;
+  backdrop-filter: blur(8px);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7c6f5f;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.intro,
+.message,
+.meta {
+  color: #6b7280;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+
+.form input {
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #fff;
+}
+
+.form button,
+.pin-button,
+.checkbox {
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.form button {
+  background: #111827;
+  color: #fff;
+  padding: 0 18px;
+}
+
+.message {
+  margin: 8px 0 0;
+}
+
+.message.error {
+  color: #b91c1c;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.task {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+}
+
+.task.pinned {
+  border-color: #c9b38c;
+  background: #fffaf0;
+}
+
+.checkbox {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  color: #111827;
+}
+
+.task-content {
+  min-width: 0;
+}
+
+.title {
+  display: block;
+  font-weight: 600;
+}
+
+.title.done {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.meta {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
+.pin-button {
+  background: #f3f4f6;
+  color: #111827;
+  padding: 10px 14px;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 20px;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .task {
+    grid-template-columns: auto 1fr;
+  }
+
+  .pin-button {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}
